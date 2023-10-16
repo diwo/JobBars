@@ -60,6 +60,33 @@ namespace JobBars.Jobs {
                 CD = 420,
                 Triggers = [new Item(ActionIds.HallowedGround)]
             }),
+            new CooldownConfig(UiHelper.Localize(ActionIds.Guardian), new CooldownProps {
+                Icon = ActionIds.Guardian,
+                Duration = 15,
+                CD = 120,
+                Triggers = [
+                    new Item(ActionIds.Guardian),
+                    new Item(ActionIds.Sentinel),
+                ]
+            }),
+            new CooldownConfig($"{UiHelper.Localize(ActionIds.Rampart)} ({UiHelper.Localize(JobIds.PLD)})", new CooldownProps {
+                Icon = ActionIds.Rampart,
+                Duration = 20,
+                CD = 90,
+                Triggers = [new Item(ActionIds.Rampart)]
+            }),
+            new CooldownConfig(UiHelper.Localize(ActionIds.Bulwark), new CooldownProps {
+                Icon = ActionIds.Bulwark,
+                Duration = 10,
+                CD = 90,
+                Triggers = [new Item(ActionIds.Bulwark)]
+            }),
+            new CooldownConfig($"{UiHelper.Localize(ActionIds.ArmsLength)} ({UiHelper.Localize(JobIds.PLD)})", new CooldownProps {
+                Icon = ActionIds.ArmsLength,
+                Duration = 6,
+                CD = 120,
+                Triggers = [new Item(ActionIds.ArmsLength)]
+            }),
             new CooldownConfig($"{UiHelper.Localize(ActionIds.Reprisal)} ({UiHelper.Localize(JobIds.PLD)})", new CooldownProps {
                 Icon = ActionIds.Reprisal,
                 Duration = 15,
