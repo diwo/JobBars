@@ -9,6 +9,7 @@ namespace JobBars {
     public class CurrentPartyMember {
         public ulong ObjectId;
         public JobIds Job;
+        public byte Level;
         public uint CurrentHP;
         public uint MaxHP;
         public Dictionary<Item, Status> BuffDict;
@@ -53,6 +54,7 @@ namespace JobBars {
                     ObjectId = localPlayer.GameObjectId,
                     CurrentHP = localPlayer.CurrentHp,
                     MaxHP = localPlayer.MaxHp,
+                    Level = localPlayer.Level,
                     Job = UiHelper.IdToJob( localPlayer.ClassJob.RowId ),
                     BuffDict = []
                 };
@@ -74,6 +76,7 @@ namespace JobBars {
                     ObjectId = info.EntityId,
                     CurrentHP = info.CurrentHP,
                     MaxHP = info.MaxHP,
+                    Level = info.Level,
                     Job = UiHelper.IdToJob( info.ClassJob ),
                     BuffDict = []
                 };
