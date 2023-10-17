@@ -24,10 +24,16 @@ namespace JobBars.Cooldowns.Manager {
             }
         }
 
-        public CooldownConfig[] GetCooldownConfigs( JobIds job ) {
+        public CooldownConfig[] GetCooldownConfigs( JobIds job, byte level ) {
             List<CooldownConfig> configs = [];
             if( JobToValue.TryGetValue( job, out var props ) ) configs.AddRange( props );
             if( CustomCooldowns.TryGetValue( job, out var customProps ) ) configs.AddRange( customProps );
+            if( JobBars.Configuration.CooldownsHideUnavailableActions ) {
+                configs = configs.FindAll( config => config.Triggers.Any( item => {
+                    if ( item.Type != ItemType.Action ) return true;
+                    return UiHelper.IsActionAvailableAtLevel( item.Id, level );
+                } ) );
+            }
             return [.. configs];
         }
 
