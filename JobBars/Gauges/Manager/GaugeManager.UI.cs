@@ -66,6 +66,13 @@ namespace JobBars.Gauges.Manager {
             }
         };
 
+        private readonly InfoBox<GaugeManager> ShowWhenInfoBox = new() {
+            Label = "Show When",
+            ContentsAction = (GaugeManager manager) => {
+                if ( ImGui.Checkbox("Weapon unsheathed", ref JobBars.Configuration.GaugesShowWeaponUnsheathed) ) JobBars.Configuration.Save();
+            }
+        };
+
         protected override void DrawHeader() {
             if( ImGui.Checkbox( "Gauges Enabled" + Id, ref JobBars.Configuration.GaugesEnabled ) ) {
                 JobBars.Configuration.Save();
@@ -75,6 +82,7 @@ namespace JobBars.Gauges.Manager {
         protected override void DrawSettings() {
             PositionInfoBox.Draw( this );
             HideWhenInfoBox.Draw( this );
+            ShowWhenInfoBox.Draw( this );
 
             if( ImGui.Checkbox( "Pulse diamond and arrow color", ref JobBars.Configuration.GaugePulse ) ) JobBars.Configuration.Save();
 

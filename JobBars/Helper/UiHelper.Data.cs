@@ -58,6 +58,16 @@ namespace JobBars.Helper {
             return false;
         }
 
+        public static bool CalcDoHide(bool enabled, bool hideOutOfCombat, bool hideWeaponSheathed, bool showWeaponUnsheathed) {
+            if ( !enabled ) return true;
+            if ( WatchingCutscene ) return true;
+            if ( InPvP ) return true;
+            if ( !WeaponSheathed && showWeaponUnsheathed ) return false;
+            if ( WeaponSheathed && hideWeaponSheathed ) return true;
+            if ( OutOfCombat && hideOutOfCombat ) return true;
+            return false;
+        }
+
         public static void ZoneChanged( ushort e ) {
             InPvP = Dalamud.DataManager.GetExcelSheet<TerritoryType>().GetRow( e )?.IsPvpZone ?? false;
         }

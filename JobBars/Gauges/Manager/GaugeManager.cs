@@ -37,7 +37,7 @@ namespace JobBars.Gauges.Manager {
         }
 
         public void Tick() {
-            if( AtkHelper.CalcDoHide( JobBars.Configuration.GaugesEnabled, JobBars.Configuration.GaugesHideOutOfCombat, JobBars.Configuration.GaugesHideWeaponSheathed ) ) {
+            if( AtkHelper.CalcDoHide( JobBars.Configuration.GaugesEnabled, JobBars.Configuration.GaugesHideOutOfCombat, JobBars.Configuration.GaugesHideWeaponSheathed, JobBars.Configuration.GaugesShowWeaponUnsheathed ) ) {
                 JobBars.Builder.HideGauges();
                 return;
             }
