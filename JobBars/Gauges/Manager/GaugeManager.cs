@@ -34,7 +34,7 @@ namespace JobBars.Gauges.Manager {
         }
 
         public void Tick() {
-            if( UiHelper.CalcDoHide( JobBars.Configuration.GaugesEnabled, JobBars.Configuration.GaugesHideOutOfCombat, JobBars.Configuration.GaugesHideWeaponSheathed ) ) {
+            if( UiHelper.CalcDoHide( JobBars.Configuration.GaugesEnabled, JobBars.Configuration.GaugesHideOutOfCombat, JobBars.Configuration.GaugesHideWeaponSheathed, JobBars.Configuration.GaugesShowWeaponUnsheathed ) ) {
                 JobBars.NodeBuilder.GaugeRoot.IsVisible = false;
                 return;
             }

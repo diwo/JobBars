@@ -59,6 +59,7 @@ namespace JobBars.Data {
         public bool GaugesEnabled = true;
         public bool GaugesHideOutOfCombat = false;
         public bool GaugesHideWeaponSheathed = false;
+        public bool GaugesShowWeaponUnsheathed = false;
         public bool GaugeGCDTextVisible = true;
 
         public GaugePositionType GaugePositionType = GaugePositionType.Global;

@@ -57,6 +57,16 @@ namespace JobBars.Helper {
             return false;
         }
 
+        public static bool CalcDoHide(bool enabled, bool hideOutOfCombat, bool hideWeaponSheathed, bool showWeaponUnsheathed) {
+            if( !enabled ) return true;
+            if( WatchingCutscene ) return true;
+            if( Dalamud.ClientState.IsPvP ) return true;
+            if( !WeaponSheathed && showWeaponUnsheathed ) return false;
+            if( OutOfCombat && hideOutOfCombat ) return true;
+            if( WeaponSheathed && hideWeaponSheathed ) return true;
+            return false;
+        }
+
         private static readonly HashSet<uint> GCDs = [];
         private static readonly Dictionary<uint, uint> ActionToIcon = [];
 
