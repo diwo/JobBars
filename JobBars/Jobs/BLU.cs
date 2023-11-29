@@ -27,6 +27,14 @@ namespace JobBars.Jobs {
                     new Item(BuffIds.BluBleed)
                 ]
             }),
+            new GaugeTimerConfig(AtkHelper.Localize(BuffIds.BreathOfMagic), GaugeVisualType.Bar, new GaugeSubTimerProps
+            {
+                MaxDuration = 60,
+                Color = AtkColor.PurplePink,
+                Triggers = [
+                    new Item(BuffIds.BreathOfMagic)
+                ]
+            }),
             new GaugeTimerConfig(AtkHelper.Localize(BuffIds.Poison), GaugeVisualType.Bar, new GaugeSubTimerProps
             {
                 MaxDuration = 15,
