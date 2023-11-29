@@ -182,6 +182,7 @@ namespace JobBars.Data {
 
         // BLU =========
         BluBleed = 1714,
+        BreathOfMagic = 3712,
         Poison = 18,
         AstralAttenuation = 2121,
         UmbralAttenuation = 2122,
