@@ -101,7 +101,7 @@ namespace JobBars.Data {
         TrickAttack = 3254,
         Bunshin = 0x7a2,
         RaijuReady = 2690,
-        Mug = 3183,
+        Mug = 638,
         KunaisBane = 3906,
         Dokumori = 3849,
 
