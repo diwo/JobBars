@@ -88,6 +88,12 @@ namespace JobBars.Jobs {
                     new IconBuffTriggerStruct { Trigger = new Item(BuffIds.LanceCharge), Duration = 20 }
                 ]
             }),
+            new IconBuffReplacer(AtkHelper.Localize(BuffIds.BattleLitany), new IconBuffProps {
+                Icons = [ActionIds.BattleLitany],
+                Triggers = [
+                    new IconBuffTriggerStruct { Trigger = new Item(BuffIds.BattleLitany), Duration = 20 }
+                ]
+            }),
             new IconBuffReplacer(AtkHelper.Localize(BuffIds.PowerSurge), new IconBuffProps {
                 IsTimer = true,
                 Icons = [
